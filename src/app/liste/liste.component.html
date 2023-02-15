@@ -1,0 +1,13 @@
+<section class="liste">
+    <h1>Mes produits(liste)</h1>
+    <article class="unProduit" *ngFor="let unProduit of produits">
+        <h2 *ngIf="estEnSold(unProduit)" class="sold">En sold</h2>
+        <div>
+            <p>Nom : {{unProduit.nom}}</p>
+            <p>Fabricant : {{unProduit.fabricant}}</p>
+            <p>prix : {{unProduit.prix}} <span *ngIf="unProduit.prix < 15" class="rabais">pas cher</span> </p>
+            <p>prix : {{unProduit.prix}} <span *ngIf="unProduit.rabais" class="rabais">En rabais pour vrai</span> </p>
+            <!-- <p>id : {{unProduit.id}}</p> -->
+        </div>
+    </article>
+</section>
