@@ -10,8 +10,10 @@ export class ListeComponent {
 
   // produits:Array<Object>;
   // produits:Object[];
+  produits:Array<IProduit>;
+  sontEditable:boolean = false;
 
-  produits: Array<IProduit>;
+  // produits: Array<IProduit>;
 
   constructor() {
 
@@ -28,14 +30,21 @@ export class ListeComponent {
       
     });
   }
-  estEnSold(unProduit:IProduit) {
+  estEnSolde(unProduit:IProduit) {
     // let solde = false;
     // if(unProduit.prix < 15 && unProduit.rabais);
     // solde = true;
     // return solde;
-
     return (unProduit.prix < 15 && unProduit.rabais);
 
+  }
+
+  verifEditable(unProduit:IProduit):boolean{
+    let res:boolean = false;
+    if(this.sontEditable || unProduit.estEditable){
+      res = true;
+    }
+    return res;
   }
 
 }

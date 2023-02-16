@@ -9,6 +9,7 @@ import { DetailComponent } from './detail/detail.component';
 import { EnteteComponent } from './entete/entete.component';
 import { NonTrouveeComponent } from './non-trouvee/non-trouvee.component';
 import { ListeComponent } from './liste/liste.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ListeComponent } from './liste/liste.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

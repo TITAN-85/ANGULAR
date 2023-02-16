@@ -1,4 +1,33 @@
-<header>
-    <h1>{{titre}}</h1>
-    <p>entete works!</p>
+<header class="App-header">
+    <nav>
+        <div class="top-nav">
+
+            <div class="barre">
+                <a routerLink="/" class="logo">Allo</a>
+                <span class="flex-spacer"></span>
+                <p class="menu-mobile"></p>
+            </div>
+
+            <ul>
+                <li>
+                    <a routerLink="" routerLinkActive="estActif"  [routerLinkActiveOptions]="{ exact: true }" >Accueil</a>
+                </li>
+                <li>
+                    <a routerLink="/produit" routerLinkActive="estActif">Les produits</a>
+                </li>
+            </ul>
+
+            <div class='login-container'>
+                <div class='login'>
+                    <p>Courriel : 
+                        <!-- <input type="email" name="email"></input> -->
+                    </p>
+                </div>
+                <div class='login'>
+                    <button disabled=""></button>
+                </div>
+            </div>
+
+        </div>
+    </nav>
 </header>
