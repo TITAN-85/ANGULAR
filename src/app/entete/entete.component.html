@@ -1,33 +1,11 @@
-<header class="App-header">
-    <nav>
-        <div class="top-nav">
+<h1><a routerLink="/"> {{titre}} - {{soustitre}}</a></h1>
+<span class="spacer"></span>
+<nav>
+    <a routerLink="/" routerLinkActive="estActif" [routerLinkActiveOptions]="{exact: true}">Accueil</a>
+    <a routerLink="/produit" routerLinkActive="estActif">Liste des produits</a>
+</nav>
+<span>
+    <p>Connecté : <button (click)="seConnecter()">{{msgConnecter}}</button></p>
+</span>
 
-            <div class="barre">
-                <a routerLink="/" class="logo">Allo</a>
-                <span class="flex-spacer"></span>
-                <p class="menu-mobile"></p>
-            </div>
 
-            <ul>
-                <li>
-                    <a routerLink="" routerLinkActive="estActif"  [routerLinkActiveOptions]="{ exact: true }" >Accueil</a>
-                </li>
-                <li>
-                    <a routerLink="/produit" routerLinkActive="estActif">Les produits</a>
-                </li>
-            </ul>
-
-            <div class='login-container'>
-                <div class='login'>
-                    <p>Courriel : 
-                        <!-- <input type="email" name="email"></input> -->
-                    </p>
-                </div>
-                <div class='login'>
-                    <button disabled=""></button>
-                </div>
-            </div>
-
-        </div>
-    </nav>
-</header>

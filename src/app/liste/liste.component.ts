@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { BieroService } from '../biero.service';
+import { IBiere } from '../ibiere';
+import { IListeBiere } from '../iliste-biere';
 import { IProduit } from '../iproduit';
 
 @Component({
@@ -6,37 +10,46 @@ import { IProduit } from '../iproduit';
   templateUrl: './liste.component.html',
   styleUrls: ['./liste.component.scss']
 })
-export class ListeComponent {
-
-  // produits:Array<Object>;
-  // produits:Object[];
-  produits:Array<IProduit>;
+export class ListeComponent implements OnInit{
+  produits:Array<IBiere>;
   sontEditable:boolean = false;
+  estConnecte:boolean = false;
 
-  // produits: Array<IProduit>;
+  constructor(private authServ:AuthService, private bieroServ:BieroService){
+    this.produits = [];/*[...Array(5)].map((item, index)=>{
+      return {  nom : "element " + index, 
+              fabricant: "brasserie xyz", 
+              prix: (10 + index*2), 
+              id:1+index,
+              rabais : !(index % 3)};
+    })*/
+    //console.log(this.produits)
 
-  constructor() {
-
-    /* 1 solution */
-    this.produits = [...Array(5)].map((item, index) => {
-      return {
-        nom: " element" + index,
-        fabricant: " brasserie xyz",
-        prix: (10 + index * 2),
-        id: index,
-        rabais: !(index % 3)
-      }
-      console.log(this.produits);
-      
-    });
+    //console.log(this.authServ.etatConnexion)
+    
   }
-  estEnSolde(unProduit:IProduit) {
-    // let solde = false;
-    // if(unProduit.prix < 15 && unProduit.rabais);
-    // solde = true;
-    // return solde;
-    return (unProduit.prix < 15 && unProduit.rabais);
 
+  ngOnInit(): void {
+    this.authServ.statutConnexion().subscribe((etat:boolean)=>{
+      this.estConnecte = etat;
+      if(this.estConnecte === false){
+        this.sontEditable = false;
+      }
+    })
+    this.authServ.setNomPage("Liste");
+    this.bieroServ.getBieres().subscribe((listeBiere)=>{
+      this.produits = listeBiere.data;
+    });
+
+  }
+  /*verifConnexion(){
+    //console.log(this.authServ.etatConnexion)
+    if(!this.authServ.getConnexion() && this.sontEditable == true){
+      this.sontEditable = false;
+    }
+  }*/
+  estEnSolde(unProduit:IProduit){
+    return (unProduit.prix < 15 && unProduit.rabais);
   }
 
   verifEditable(unProduit:IProduit):boolean{

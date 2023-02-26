@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "appDemoOk": {
+    "app-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/app-demo-ok",
+            "outputPath": "dist/app-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "appDemoOk:build:production"
+              "browserTarget": "app-demo:build:production"
             },
             "development": {
-              "browserTarget": "appDemoOk:build:development"
+              "browserTarget": "app-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "appDemoOk:build"
+            "browserTarget": "app-demo:build"
           }
         },
         "test": {
@@ -102,6 +102,6 @@
     }
   },
   "cli": {
-    "analytics": "d87f857e-892e-49c8-aa7d-722b62d4386b"
+    "analytics": false
   }
 }

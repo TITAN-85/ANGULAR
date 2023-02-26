@@ -1,14 +1,11 @@
 .liste {
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
     display: flex;
-
-    .unProduit {
-        height: 360px;
-        width: 220px;
-        border: 2px dashed rebeccapurple;
+    flex-direction: column;
+    .unProduit{
+        margin: 16px;
         
+        width: 200px;
+        border: 5px dashed rebeccapurple;
         .ng-dirty {
             border: 1px solid red;
         }
