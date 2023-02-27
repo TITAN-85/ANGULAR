@@ -1,4 +1,10 @@
 :host{  /* app-entete*/
+    ul {
+      display: flex;
+    }
+    li {
+    }
+    margin-left: 20px ;
     display: flex;
     color: rebeccapurple;
     padding: 8px;
@@ -14,9 +20,42 @@
         a {
             margin-left: 16px;
             &.estActif {
+              //letter-spacing: 2px;
+              //font-weight: 700;
                 font-weight: bold;
             }
         }
 
     }
+
+  //
+  //.login-container {
+  //  display: flex;
+  //  flex-direction: column;
+  //}
+  //.login {
+  //  display: flex;
+  //  justify-content: flex-end;
+  //  margin-top: 15px;
+  //}
+  //.login p {
+  //  padding: 0;
+  //  margin: 0;
+  //}
+  //
+  //.top-nav {
+  //  margin-left: auto;
+  //  margin-right: auto;
+  //  max-width: 995px;
+  //  /* border: 2px solid black; */
+  //}
+  //
+  //a .logo {
+  //  padding: 0;
+  //  margin: 0;
+  //}
+  //
+  //.logo {
+  //  max-width: 80px;
+  //}
 }
