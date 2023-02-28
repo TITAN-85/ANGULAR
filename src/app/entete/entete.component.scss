@@ -27,6 +27,13 @@
         }
 
     }
+  mat-toolbar{
+    position: fixed;
+  }
+
+  .filler{
+    flex-grow: 1;
+  }
 
   //
   //.login-container {
