@@ -1,10 +1,9 @@
 
 
-
-
 <section class="liste">
     <h1>Mes produits</h1>
     <p *ngIf="estConnecte">Sont éditable ? <input type="checkbox" [(ngModel)]="sontEditable"></p>
+
     <app-produit [(peutEditer)]="sontEditable"  [produit]="unProduit" *ngFor = "let unProduit of produits"></app-produit>
 
 
@@ -20,11 +19,11 @@
         <ng-template #editable>
             <article  class="unProduit" >
                 <p>Nom : <input type="text" [(ngModel)]="unProduit.nom"></p>
-                <p>Fabricant : <input type="text"  [(ngModel)]="unProduit.fabricant"></p>            
+                <p>Fabricant : <input type="text"  [(ngModel)]="unProduit.fabricant"></p>
             </article>
         </ng-template>
         <p>Est éditable ? <input type="checkbox" [(ngModel)]="unProduit.estEditable"></p>
     </ng-container>-->
-    
+
 </section>
 

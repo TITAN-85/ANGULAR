@@ -1,0 +1,9 @@
+:host{
+  padding-top: calc(20px);
+  display: flex;
+  flex-wrap: wrap;
+  .liste {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
