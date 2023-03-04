@@ -2,8 +2,17 @@
   padding-top: calc(20px);
   display: flex;
   flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: gainsboro;
+  width: 1400px;
+  padding: 20px;
+  margin-top: 20px;
+  text-decoration: none;
+
   .liste {
     display: flex;
     flex-wrap: wrap;
+
   }
 }

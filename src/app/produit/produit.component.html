@@ -3,6 +3,7 @@
     <p><a routerLink="/produit/{{produit.id_biere}}">Nom : {{produit.nom}}</a></p>
     <p>Fabricant : {{produit.brasserie}}</p>
 </article>
+
 <ng-template #editable>
     <!--<article  class="unProduit" >
         <p>Nom : <input type="text" [(ngModel)]="produit.nom"></p>
@@ -13,7 +14,9 @@
         <p>Brasserie : <input formControlName="brasserie"></p>
         <p>Description : <textarea formControlName="description"></textarea></p>
         <button (click)="modifier()" [disabled]="!modifForm.dirty || !modifForm.valid">Modifier</button>
+        <button><a routerLink="/produit/{{produit.id_biere}}">Modifier</a></button>
         <button (click)="annuler()" [disabled]="!modifForm.dirty">Annuler</button>
     </form>
+
 </ng-template>
     <p *ngIf="estConnecte">Est éditable ? <input type="checkbox" (change)="changeEditable()" [(ngModel)]="peutEditer"></p>

@@ -37,7 +37,6 @@ export class BieroService {
     })};
 
     return this.http.post<IBiere>(this.url_biero + id_biere, data, httpOptions);
-
   }
 
 }
