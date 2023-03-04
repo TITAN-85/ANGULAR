@@ -4,7 +4,8 @@
 	column-gap: 20px;
 	align-items: center;
 	justify-content: space-between;
-
+	margin-left: auto;
+	margin-right: auto;
 
 	width: 1400px;
 	padding: 10px 20px;
@@ -12,13 +13,23 @@
 	color: #d0d0d0;
 	border-radius: 6px;
 
-	.nom-produit {
-
-	}
-
+	.nom-produit {}
 	.buttons{
 		display: flex;
 		flex-wrap: nowrap;
 		column-gap: 12px;
+	}
+
+	@media screen and (max-width: 1024px){
+		width: 700px;
+	}
+	@media screen and (max-width: 768px) {
+		width: 550px;
+	}
+	@media screen and (max-width: 630px) {
+		width: 400px;
+	}
+	@media screen and (max-width: 360px) {
+		width: 300px;
 	}
 }

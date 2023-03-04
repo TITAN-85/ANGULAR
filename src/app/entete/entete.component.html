@@ -1,25 +1,15 @@
 
-<!--<mat-toolbar>-->
-<!--  <mat-toolbar-row>-->
-<!--  <span>Produits...</span>-->
-    <span class="filler" >Produits...</span>
-    <nav>
-      <span ></span>
-      <a mat-button color="warn"  routerLink="/" routerLinkActive="estActif" [routerLinkActiveOptions]="{exact: true}"><mat-icon>home</mat-icon><span>Accueil</span></a>
-      <a mat-button color="warn" routerLink="/list" routerLinkActive="estActif">Liste des produits</a>
-    </nav>
-<!--  </mat-toolbar-row>-->
 
-<!--  <mat-toolbar-row>-->
-    <h1><a routerLink="/"> {{titre}} - {{soustitre}}</a></h1>
-    <span class="spacer"></span>
+<nav>
+  <div>
+    <a mat-button color="warn"  routerLink="/" routerLinkActive="estActif" [routerLinkActiveOptions]="{exact: true}"><mat-icon>home</mat-icon><span>Accueil</span></a>
+    <a mat-button color="warn" routerLink="/produit" routerLinkActive="estActif">Liste des produits</a>
+  </div>
 
-    <section>
-         <button mat-button color="primary" (click)="seConnecter()">{{msgConnecter}}</button>
-    </section>
-<!--    <span>-->
-<!--        <p>Connecté : <button (click)="seConnecter()">{{msgConnecter}}</button></p>-->
-<!--    </span>-->
-<!--  </mat-toolbar-row>-->
-<!--</mat-toolbar>-->
+  <div>
+    <button mat-button color="primary" (click)="seConnecter()">{{msgConnecter}}</button>
+  </div>
+</nav>
+
+
 
