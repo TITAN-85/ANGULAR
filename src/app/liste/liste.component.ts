@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { BieroService } from '../biero.service';
 import { IBiere } from '../ibiere';
-import { IListeBiere } from '../iliste-biere';
 import { IProduit } from '../iproduit';
 
 @Component({
@@ -30,7 +29,6 @@ export class ListeComponent implements OnInit{
     this.bieroServ.getBieres().subscribe((listeBiere)=>{
       this.produits = listeBiere.data;
     });
-
   }
 
   estEnSolde(unProduit:IProduit){

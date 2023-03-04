@@ -25,8 +25,14 @@ export class BieroService {
 
   }
 
-  effacerBiere(){
+  effacerBiere(id_biere:number):Observable<any> {
 
+	  let httpOptions = {headers : new HttpHeaders({
+			  "Content-type" : "application/json",
+			  "Authorization" : "Basic " + btoa("biero:biero")
+		  })};
+
+	  return this.http.delete<IBiere>(this.url_biero + id_biere, httpOptions);
   }
 
   modifierBiere(id_biere:number, data:IBiere):Observable<any>{

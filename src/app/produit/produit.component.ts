@@ -56,6 +56,8 @@ export class ProduitComponent implements OnInit {
 	}
 
 	onEfacer(id_biere: number) {
+		this.bieroServ.effacerBiere(id_biere).subscribe((retour) => {
 
+		});
 	}
 }
