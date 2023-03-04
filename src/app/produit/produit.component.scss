@@ -1,17 +1,24 @@
 :host {
-	height: 56px;
+	height: 36px;
 	display: grid;
 	grid-template-rows: min-content;
 	grid-template-columns: 200px 200px 200px 200px auto;
 
 	column-gap: 20px;
 	align-items: center;
+	align-content: center;
 	padding: 10px 20px;
 	background-color: #23283d;
-	color: #d0d0d0;
+	color: #90a7cb;
 	border-radius: 6px;
 
 	.nom-produit {}
+	.brasserie {}
+	.date-ajout {
+		color: #5f769b;
+		font-weight: 200;
+	}
+	.date-modification {color: #5f769b;}
 	.buttons{
 		display: flex;
 		justify-content: end;
