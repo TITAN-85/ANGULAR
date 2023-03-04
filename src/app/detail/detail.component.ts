@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { BieroService } from '../biero.service';
 import { IBiere } from '../ibiere';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-detail',
@@ -12,13 +13,13 @@ import { IBiere } from '../ibiere';
 export class DetailComponent implements OnInit{
   biere:IBiere;
 
-  constructor(private authServ:AuthService, 
-              private route:ActivatedRoute, 
+  constructor(private authServ:AuthService,
+              private route:ActivatedRoute,
               private bieroServ:BieroService){ }
-  
+
   ngOnInit(): void {
     this.authServ.setNomPage("Détail du produit");
-    
+
     this.route.params.subscribe((params)=>{
       this.bieroServ.getUneBiere(params['id']).subscribe((biere:any)=>{
         console.log(biere)
@@ -26,6 +27,5 @@ export class DetailComponent implements OnInit{
       })
     })
     console.log(this.route);
-
   }
 }
