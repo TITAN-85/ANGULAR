@@ -4,15 +4,26 @@
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
-  background-color: gainsboro;
-  width: 1400px;
+  background-color: #d4ecec;
+  width: 950px;
   padding: 20px;
   margin-top: 20px;
   text-decoration: none;
-
+  @media screen and (max-width: 1024px){
+    width: 700px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 550px;
+  }
+  @media screen and (max-width: 630px) {
+    width: 400px;
+  }
+  @media screen and (max-width: 360px) {
+    width: 300px;
+  }
   .liste {
     display: flex;
     flex-wrap: wrap;
-
   }
+
 }

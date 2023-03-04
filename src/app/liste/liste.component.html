@@ -1,7 +1,7 @@
 
 
 <section class="liste">
-    <h1>Mes produits</h1>
+    <h1 class="title-list">Mes produits</h1>
     <p *ngIf="estConnecte">Sont éditable ? <input type="checkbox" [(ngModel)]="sontEditable"></p>
 
     <app-produit [(peutEditer)]="sontEditable"  [produit]="unProduit" *ngFor = "let unProduit of produits"></app-produit>
