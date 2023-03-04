@@ -4,7 +4,7 @@
 <div class="brasserie">{{produit.brasserie}}</div>
 <div class="date-ajout">{{produit.date_ajout}}</div>
 <div class="date-modification">{{produit.date_modif}}</div>
-<div class="buttons">
+<div class="buttons" *ngIf="estConnecte">
 	<button mat-raised-button color="primary" (click)="onModifier(produit.id_biere)">Modifier</button>
 	<button mat-raised-button color="warn" (click)="onEfacer(produit.id_biere)">Effacer</button>
 </div>

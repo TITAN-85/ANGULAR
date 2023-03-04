@@ -1,13 +1,11 @@
 :host {
-	display: flex;
-	flex-wrap: nowrap;
+	height: 56px;
+	display: grid;
+	grid-template-rows: min-content;
+	grid-template-columns: 200px 200px 200px 200px auto;
+
 	column-gap: 20px;
 	align-items: center;
-	justify-content: space-between;
-	margin-left: auto;
-	margin-right: auto;
-
-	width: 1400px;
 	padding: 10px 20px;
 	background-color: #23283d;
 	color: #d0d0d0;
@@ -16,6 +14,7 @@
 	.nom-produit {}
 	.buttons{
 		display: flex;
+		justify-content: end;
 		flex-wrap: nowrap;
 		column-gap: 12px;
 	}
