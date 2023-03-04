@@ -1,13 +1,4 @@
-:host{  /* app-entete*/
-    ul {
-      display: flex;
-    }
-    li {
-    }
-    margin-left: 20px ;
-    display: flex;
-    color: rebeccapurple;
-    padding: 8px;
+:host{
     button{
         width: 150px;
     }
@@ -16,10 +7,16 @@
     }
 
     nav{
-        display: flex;
+		//position: fixed;
+		display: flex;
         align-items: center;
         justify-content: space-between;
-        a {
+		padding: 20px;
+		background-color: #23283d;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1024px;
+		a {
             margin-left: 16px;
             &.estActif {
               //letter-spacing: 2px;
@@ -27,7 +24,29 @@
                 font-weight: bold;
             }
         }
+
+		@media screen and (max-width: 1024px){
+			width: 700px;
+		}
+		@media screen and (max-width: 768px) {
+			width: 550px;
+		}
+		@media screen and (max-width: 630px) {
+			width: 400px;
+		}
+		@media screen and (max-width: 360px) {
+			width: 300px;
+		}
+
     }
+	header {
+		background-color: #23283d;
+		color: azure;
+		padding: 20px;
+	}
+	header h1 {
+		margin-left: 25px;
+	}
   mat-toolbar{
     position: fixed;
     z-index: 999;
@@ -37,16 +56,4 @@
     flex-grow: 1;
   }
 
-  @media screen and (max-width: 1024px){
-    width: 700px;
-  }
-  @media screen and (max-width: 768px) {
-    width: 550px;
-  }
-  @media screen and (max-width: 630px) {
-    width: 400px;
-  }
-  @media screen and (max-width: 360px) {
-    width: 300px;
-  }
 }
