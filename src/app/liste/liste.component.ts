@@ -16,17 +16,7 @@ export class ListeComponent implements OnInit{
   estConnecte:boolean = false;
 
   constructor(private authServ:AuthService, private bieroServ:BieroService){
-    this.produits = [];/*[...Array(5)].map((item, index)=>{
-      return {  nom : "element " + index, 
-              fabricant: "brasserie xyz", 
-              prix: (10 + index*2), 
-              id:1+index,
-              rabais : !(index % 3)};
-    })*/
-    //console.log(this.produits)
-
-    //console.log(this.authServ.etatConnexion)
-    
+    this.produits = [];
   }
 
   ngOnInit(): void {
@@ -42,12 +32,7 @@ export class ListeComponent implements OnInit{
     });
 
   }
-  /*verifConnexion(){
-    //console.log(this.authServ.etatConnexion)
-    if(!this.authServ.getConnexion() && this.sontEditable == true){
-      this.sontEditable = false;
-    }
-  }*/
+
   estEnSolde(unProduit:IProduit){
     return (unProduit.prix < 15 && unProduit.rabais);
   }
@@ -59,5 +44,4 @@ export class ListeComponent implements OnInit{
     }
     return res;
   }
-
 }

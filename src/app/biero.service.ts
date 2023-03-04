@@ -9,6 +9,7 @@ import { IBiere } from './ibiere';
 })
 export class BieroService {
   private url_biero:string = "http://127.0.0.1:8000/webservice/php/biere/";
+  // private url_biero:string = "https://beer-admin.alexandrucandu.ca/webservice/php/biere/";
 
   constructor(private http:HttpClient) { }
 
