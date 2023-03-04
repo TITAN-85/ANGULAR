@@ -1,14 +1,13 @@
-
 <header>
-	<div>
+	<div class="container-nav">
 		<nav>
-		  	<div>
-				<a mat-button color="warn"  routerLink="/" routerLinkActive="estActif" [routerLinkActiveOptions]="{exact: true}"><mat-icon>home</mat-icon><span>Accueil</span></a>
+			<div class="top-nav">
+				<a mat-button color="warn"  routerLink="/" routerLinkActive="estActif" [routerLinkActiveOptions]="{exact: true}"><mat-icon>home</mat-icon><span class="accueilBlock">Accueil</span></a>
 				<a mat-button color="warn" routerLink="/list" routerLinkActive="estActif">Liste des produits</a>
-		  	</div>
-		  	<div>
+			</div>
+			<div>
 				<button mat-button color="primary" (click)="seConnecter()">{{msgConnecter}}</button>
-		  	</div>
+			</div>
 			</nav>
 		<div>
 			<h1>Bien venu a la liste de bieres</h1>
