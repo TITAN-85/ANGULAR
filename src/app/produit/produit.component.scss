@@ -1,7 +1,6 @@
 :host {
-	height: 36px;
 	display: grid;
-	grid-template-rows: min-content;
+	grid-template-rows: 36px;
 	grid-template-columns: 200px 200px 200px 200px auto;
 
 	column-gap: 20px;
