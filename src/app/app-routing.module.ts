@@ -8,7 +8,7 @@ import { NonTrouveeComponent } from './non-trouvee/non-trouvee.component';
 
 const routes: Routes = [
   {path : "", component:AccueilComponent},
-  {path : "produit", component:ListeComponent},
+  {path : "list", component:ListeComponent},
   {path : "produit/:id", component:DetailComponent, canActivate:[GardienLoginGuard]},
   {path : "**", component:NonTrouveeComponent}
 
