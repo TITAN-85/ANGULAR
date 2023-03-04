@@ -7,9 +7,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class AuthService {
   private etatConnexion:boolean = false;
+
   estConnecte:BehaviorSubject<boolean>;
   estConnecte$:Observable<boolean>;
-  
   nomPage:BehaviorSubject<string>;
   nomPage$:Observable<string>;
 
@@ -33,7 +33,7 @@ export class AuthService {
     this.etatConnexion = etat;
     this.estConnecte.next(this.etatConnexion);
   }
-  
+
   statutConnexion():Observable<boolean>{
     return this.estConnecte;
   }

@@ -1,7 +1,6 @@
-import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AuthService} from '../auth.service';
 import {IBiere} from '../ibiere';
-import {FormControl, FormGroup, Validators} from '@angular/forms'
 import {BieroService} from '../biero.service';
 
 @Component({
@@ -12,45 +11,31 @@ import {BieroService} from '../biero.service';
 
 export class ProduitComponent implements OnInit {
 	@Input() produit: IBiere;
-	@Output() peutEditerChange = new EventEmitter<boolean>();
-	@Input() peutEditer: boolean;
 	estConnecte: boolean = false;
-	modifForm: FormGroup;
 
 	constructor(private authServ: AuthService, private bieroServ: BieroService) {
 		this.authServ.statutConnexion().subscribe((etat) => {
 			this.estConnecte = etat;
-			if (etat === false) {
-				this.peutEditer = false;
-			}
-
 		})
 	}
 
 	ngOnInit(): void {
-		this.modifForm = new FormGroup({
-			nom: new FormControl(this.produit.nom, [Validators.required, Validators.minLength(2)]),
-			brasserie: new FormControl(this.produit.brasserie),
-			description: new FormControl(this.produit.description)
-		});
+		// this.modifForm = new FormGroup({
+		// 	nom: new FormControl(this.produit.nom, [Validators.required, Validators.minLength(2)]),
+		// 	brasserie: new FormControl(this.produit.brasserie),
+		// 	description: new FormControl(this.produit.description)
+		// });
 	}
 
-	changeEditable() {
-		if (!this.estConnecte) {
-			this.peutEditer = false;
-		}
-		this.peutEditerChange.emit(this.peutEditer);
 
-	}
+	// annuler() {
+	//
+	// 	this.modifForm.controls["nom"].setValue(this.produit.nom);
+	// 	this.modifForm.controls["brasserie"].setValue(this.produit.brasserie);
+	// 	this.modifForm.controls["description"].setValue(this.produit.description);
+	// }
 
-	annuler() {
-		console.log(this.modifForm);
-		this.modifForm.controls["nom"].setValue(this.produit.nom);
-		this.modifForm.controls["brasserie"].setValue(this.produit.brasserie);
-		this.modifForm.controls["description"].setValue(this.produit.description);
-	}
-	
-	
+
 
 	// modifier() {
 	// 	let unProduit: IBiere = this.modifForm.value;
@@ -64,13 +49,13 @@ export class ProduitComponent implements OnInit {
 	// 	});
 	//
 	// }
-	
-	
+
+
 	onModifier(id_biere: number): void {
 		// Routing -> Modify page
 	}
 
 	onEfacer(id_biere: number) {
-		
+
 	}
 }
