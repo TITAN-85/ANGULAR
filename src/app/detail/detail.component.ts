@@ -3,7 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { BieroService } from '../biero.service';
 import { IBiere } from '../ibiere';
-import { FormControl } from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms'
+
 
 @Component({
   selector: 'app-detail',
@@ -12,8 +13,10 @@ import { FormControl } from '@angular/forms';
 })
 export class DetailComponent implements OnInit{
   biere:IBiere;
+	modifForm:FormGroup;
 
-  constructor(private authServ:AuthService,
+
+	constructor(private authServ:AuthService,
               private route:ActivatedRoute,
               private bieroServ:BieroService){ }
 

@@ -12,7 +12,6 @@ const routes: Routes = [
 	{path: "list", component: ListeComponent},
 	{path: "produit/:id", component: DetailComponent, canActivate: [GardienLoginGuard]},
 	{path: "**", component: NonTrouveeComponent}
-
 ];
 
 @NgModule({

@@ -13,7 +13,7 @@ export class GardienLoginGuard implements CanActivate{
       this.estConnecte = etat;
       console.log(this.estConnecte);
       if(this.estConnecte === false){
-        this.router.navigate(["/produit"]);
+        this.router.navigate(["/list"]);
       }
     })
   }
@@ -28,6 +28,6 @@ export class GardienLoginGuard implements CanActivate{
     else
       return this.router.parseUrl('/');
   }
-  
-  
+
+
 }
