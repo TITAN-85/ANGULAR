@@ -4,12 +4,14 @@
 </pre>
 </article>
 
+<p *ngIf="true" >Est éditable ? <input type="checkbox" (change)="changeEditable()" [(ngModel)]="peutEditer"></p>
+
 <div class="form-change">
 	<h3>Form biere</h3>
 	<form [formGroup]="modifForm">
 		<div class="form-inputs">
 			<label for="formName">Nom:</label>
-			<input id="formName" formControlName="nom">
+			<input id="formName" formControlName="nom" placeholder="{{biere.nom}}">
 
 			<label for="formBrasserie">Brasserie:</label>
 			<input id="formBrasserie" formControlName="brasserie">
@@ -24,5 +26,4 @@
 		</div>
 	</form>
 </div>
-<p>Est éditable ? <input type="checkbox" (change)="changeEditable()" [(ngModel)]="peutEditer"></p>
 
