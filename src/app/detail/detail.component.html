@@ -7,7 +7,7 @@
 
 <div class="form-change">
 	<h3>Form biere</h3>
-	<form [formGroup]="form">
+	<form [formGroup]="form" (ngSubmit)="modifier()">
 		<div class="form-inputs">
 			<label for="formName">Nom:</label>
 			<input id="formName" formControlName="nom" placeholder="Nom de la biere">
@@ -20,7 +20,8 @@
 		</div>
 
 		<div class="form-btn">
-<!--			<button mat-raised-button color="primary" (click)="modifier()" [disabled]="!modifForm.dirty || !modifForm.valid">Modifier</button>-->
+			<button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Modifier</button>
+			<!--			<button mat-raised-button color="primary" (click)="modifier()" [disabled]="!modifForm.dirty || !modifForm.valid">Modifier</button>-->
 <!--			<button mat-raised-button color="warn" (click)="annuler()" [disabled]="!modifForm.dirty">Annuler</button>-->
 		</div>
 	</form>

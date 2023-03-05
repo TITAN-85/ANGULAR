@@ -33,9 +33,19 @@ export class DetailComponent implements OnInit {
 
 	public createForm(): void {
 		this.form = new FormGroup({
-			nom: 			new FormControl(undefined, [Validators.required, Validators.minLength(2)]),
-			brasserie : 	new FormControl(undefined),
-			description : 	new FormControl(undefined)
+			nom: 			new FormControl(undefined, [
+				Validators.required,
+				Validators.minLength(2),
+				Validators.max(50)
+			]),
+			brasserie : 	new FormControl(undefined,[
+				Validators.minLength(2),
+				Validators.max(50)
+			]),
+			description : 	new FormControl(undefined, [
+				Validators.minLength(10),
+				Validators.max(500),
+			])
 		});
 	}
 
@@ -47,7 +57,7 @@ export class DetailComponent implements OnInit {
 		}
 	}
 
-	modifier() {
+	// modifier() {
 		// let unProduit: IBiere = this.modifForm.value;
 		// console.log(unProduit);
 		// this.bieroServ.modifierBiere(this.produit.id_biere, unProduit).subscribe((retour) => {
@@ -57,7 +67,7 @@ export class DetailComponent implements OnInit {
 		// 	this.produit.brasserie = unProduit.brasserie;
 		// 	this.produit.description = unProduit.description;
 		// });
-	}
+	// }
 
 	// annuler() {
 	// 	console.log(this.modifForm);
@@ -65,4 +75,9 @@ export class DetailComponent implements OnInit {
 	// 	this.modifForm.controls["brasserie"].setValue(this.produit.brasserie);
 	// 	this.modifForm.controls["description"].setValue(this.produit.description);
 	// }
+	modifier() {
+		console.log('Form Submited: ', this.form)
+		const formData = {...this.form.value}
+		console.log(formData)
+	}
 }
