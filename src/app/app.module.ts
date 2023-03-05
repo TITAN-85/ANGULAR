@@ -16,6 +16,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
+import { FormulaireComponent } from './formulaire/formulaire.component';
 
 
 
@@ -28,7 +29,8 @@ import {MatCardModule} from '@angular/material/card';
     DetailComponent,
     EnteteComponent,
     NonTrouveeComponent,
-    ListeComponent
+    ListeComponent,
+    FormulaireComponent
   ],
   imports: [
     BrowserModule,
