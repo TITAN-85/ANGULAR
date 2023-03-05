@@ -1,7 +1,7 @@
 <header>
 	<div class="left">
-		<a mat-button color="warn"  routerLink="/" routerLinkActive="estActif" [routerLinkActiveOptions]="{exact: true}"><mat-icon>home</mat-icon><span class="accueilBlock">Accueil</span></a>
-		<a mat-button color="warn" routerLink="/list" routerLinkActive="estActif">Liste des produits</a>
+		<a mat-button color="warn"  routerLink="/accueil" routerLinkActive="estActif" [routerLinkActiveOptions]="{exact: true}"><mat-icon>home</mat-icon><span class="accueilBlock">Accueil</span></a>
+		<a mat-button color="warn"  routerLink="/list" 	  routerLinkActive="estActif">Liste des produits</a>
 	</div>
 	<button mat-button color="primary" (click)="seConnecter()">{{msgConnecter}}</button>
 </header>

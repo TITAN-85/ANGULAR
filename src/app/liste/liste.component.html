@@ -1,9 +1,11 @@
 
-
-
 <h1 class="title">Mes produits</h1>
 <div class="liste">
-	<app-produit [produit]="unProduit" *ngFor="let unProduit of produits"></app-produit>
+	<app-produit *ngFor="let unProduit of produits"
+				 [produit]="unProduit"
+				 (effacer)="onEffacer($event)"
+				 (modifier)="onModifier($event)">
+	</app-produit>
 </div>
 
 

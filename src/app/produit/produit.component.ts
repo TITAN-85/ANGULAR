@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {AuthService} from '../auth.service';
 import {IBiere} from '../ibiere';
 import {BieroService} from '../biero.service';
@@ -11,6 +11,8 @@ import {BieroService} from '../biero.service';
 
 export class ProduitComponent implements OnInit {
 	@Input() produit: IBiere;
+	@Output() effacer = new EventEmitter<number>();
+	@Output() modifier = new EventEmitter<number>();
 	estConnecte: boolean = false;
 
 	constructor(private authServ: AuthService, private bieroServ: BieroService) {
@@ -51,13 +53,11 @@ export class ProduitComponent implements OnInit {
 	// }
 
 
-	onModifier(id_biere: number): void {
-		// Routing -> Modify page
+	onModifier(id_biere: number):void {
+		this.modifier.next(id_biere);
 	}
 
-	onEfacer(id_biere: number) {
-		this.bieroServ.effacerBiere(id_biere).subscribe((retour) => {
-
-		});
+	onEffacer(id_biere: number):void {
+		this.effacer.next(id_biere);
 	}
 }
