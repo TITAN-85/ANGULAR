@@ -19,9 +19,10 @@
 		</div>
 
 		<div class="form-btn">
-			<button mat-raised-button color="primary" >Modifier</button>
-			<button mat-raised-button color="warn" >Annuler</button>
+			<button mat-raised-button color="primary" (click)="modifier()" [disabled]="!modifForm.dirty || !modifForm.valid">Modifier</button>
+			<button mat-raised-button color="warn" (click)="annuler()" [disabled]="!modifForm.dirty">Annuler</button>
 		</div>
 	</form>
 </div>
+<p>Est éditable ? <input type="checkbox" (change)="changeEditable()" [(ngModel)]="peutEditer"></p>
 

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { BieroService } from '../biero.service';
 import { IBiere } from '../ibiere';
 import {FormControl, FormGroup, Validators} from '@angular/forms'
+import { IProduit } from '../iproduit';
 
 
 @Component({
@@ -12,8 +13,13 @@ import {FormControl, FormGroup, Validators} from '@angular/forms'
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit{
-  biere:IBiere;
+  	biere:IBiere;
 	modifForm:FormGroup;
+	@Input() produit:IBiere;
+	@Output() peutEditerChange = new EventEmitter<boolean>();
+	@Input() peutEditer:boolean;
+
+
 
 
 	constructor(private authServ:AuthService,
@@ -25,10 +31,37 @@ export class DetailComponent implements OnInit{
 
     this.route.params.subscribe((params)=>{
       this.bieroServ.getUneBiere(params['id']).subscribe((biere:any)=>{
-        console.log(biere)
         this.biere = biere.data;
       })
     })
-    console.log(this.route);
+	  this.modifForm = new FormGroup({
+		  nom: new FormControl(this.produit.nom, [Validators.required, Validators.minLength(2)]),
+		  brasserie : new FormControl(this.produit.brasserie),
+		  description : new FormControl(this.produit.description)
+	  });
   }
+
+	changeEditable(){
+		this.peutEditer = true;
+		this.peutEditerChange.emit(this.peutEditer);
+	}
+
+	modifier(){
+		let unProduit:IBiere = this.modifForm.value;
+		console.log(unProduit);
+		this.bieroServ.modifierBiere(this.produit.id_biere, unProduit).subscribe((retour)=>{
+			console.log(retour);
+			this.peutEditer = false;
+			this.produit.nom = unProduit.nom;
+			this.produit.brasserie = unProduit.brasserie;
+			this.produit.description = unProduit.description;
+		});
+	}
+
+	annuler(){
+		console.log(this.modifForm);
+		this.modifForm.controls["nom"].setValue(this.produit.nom);
+		this.modifForm.controls["brasserie"].setValue(this.produit.brasserie);
+		this.modifForm.controls["description"].setValue(this.produit.description);
+	}
 }
