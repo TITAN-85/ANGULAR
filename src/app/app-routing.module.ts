@@ -7,7 +7,7 @@ import {ListeComponent} from './liste/liste.component';
 import {NonTrouveeComponent} from './non-trouvee/non-trouvee.component';
 
 const routes: Routes = [
-	{path: "", redirectTo: '/accueil', pathMatch: 'full'},
+	{path: "", redirectTo: '/list', pathMatch: 'full'},
 	{path: "accueil", component: AccueilComponent},
 	{path: "list", component: ListeComponent},
 	{path: "produit/:id", component: DetailComponent, canActivate: [GardienLoginGuard]},
