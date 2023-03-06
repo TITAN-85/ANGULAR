@@ -22,11 +22,6 @@ export class ProduitComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		// this.modifForm = new FormGroup({
-		// 	nom: new FormControl(this.produit.nom, [Validators.required, Validators.minLength(2)]),
-		// 	brasserie: new FormControl(this.produit.brasserie),
-		// 	description: new FormControl(this.produit.description)
-		// });
 	}
 
 

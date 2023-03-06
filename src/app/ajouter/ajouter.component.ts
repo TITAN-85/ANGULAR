@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from '../auth.service';
 import {BieroService} from '../biero.service';
 import {IBiere} from '../ibiere';
@@ -16,6 +16,7 @@ export class AjouterComponent implements OnInit {
 
 	constructor(private authServ: AuthService,
 				private route: ActivatedRoute,
+				private router: Router,
 				private bieroServ: BieroService) {
 	}
 
@@ -48,8 +49,6 @@ export class AjouterComponent implements OnInit {
 		});
 	}
 
-
-
 	ajouter() {
 		let nouvelleBiere: IBiere = this.form.value;
 		console.log(nouvelleBiere)
@@ -59,5 +58,6 @@ export class AjouterComponent implements OnInit {
 			this.biere.brasserie = nouvelleBiere.brasserie;
 			this.biere.description = nouvelleBiere.description;
 		})
+		this.router.navigate(['/list']);
 	}
 }
