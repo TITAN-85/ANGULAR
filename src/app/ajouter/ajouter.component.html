@@ -1,1 +1,22 @@
-<p>ajouter works!</p>
+
+<h1 class="title">Ajouter biere</h1>
+
+<div class="form-change">
+	<h3>Form biere</h3>
+	<form [formGroup]="form" (ngSubmit)="ajouter()">
+		<div class="form-inputs">
+			<label for="formName">Nom:</label>
+			<input id="formName" formControlName="nom" placeholder="Nom de la biere">
+
+			<label for="formBrasserie">Brasserie:</label>
+			<input id="formBrasserie" formControlName="brasserie">
+
+			<label for="formDescription">Description:</label>
+			<textarea id="formDescription" formControlName="description" rows="4" cols="70"></textarea>
+		</div>
+
+		<div class="form-btn">
+			<button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Ajouter</button>
+		</div>
+	</form>
+</div>

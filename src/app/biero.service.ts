@@ -21,8 +21,13 @@ export class BieroService {
     return this.http.get<IBiere>(this.url_biero+id);
   }
 
-  ajouterBiere(){
+  ajouterBiere(data:IBiere):Observable<any>{
+	  let httpOptions = {headers : new HttpHeaders({
+			  "Content-type" : "application/json",
+			  "Authorization" : "Basic " + btoa("biero:biero")
+		  })};
 
+	  return this.http.put<IBiere>(this.url_biero, data, httpOptions);
   }
 
   effacerBiere(id_biere:number):Observable<any> {

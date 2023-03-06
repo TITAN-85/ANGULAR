@@ -1,0 +1,55 @@
+:host {
+
+	.form-change {
+		background-color: #23283d;
+		color: #90a7cb;
+		max-width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 6px;
+		padding: 20px 40px;
+	}
+	.title {
+		margin-bottom: 6px;
+	}
+
+	.form-btn {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		margin: 20px;
+	}
+	.form-inputs {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.form-inputs label{
+		color: #90a7cb;
+		padding: 10px 0px 4px 0px;
+		font-weight: 400;
+	}
+	.form-inputs input{
+		border-radius: 5px;
+		padding-top: 16px;
+		padding-bottom: 6px;
+	}
+
+	.form-inputs input{
+		&.ng-invalid {
+			border: 3px solid red;
+		}
+	}
+
+	//.form-inputs input{
+	//	&.ng-invalid.ng-touched {
+	//		border: 5px solid red;
+	//	}
+	//}
+
+	.exJson {
+		width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
