@@ -58,7 +58,6 @@ export class DetailComponent implements OnInit {
 	}
 
 	modifier() {
-
 		let uneBiere: IBiere = this.form.value;
 		this.bieroServ.modifierBiere(this.biere.id_biere, uneBiere).subscribe((retour) => {
 			console.log(retour);

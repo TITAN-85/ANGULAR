@@ -20,7 +20,7 @@
 		</div>
 
 		<div class="form-btn">
-			<button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Modifier</button>
+			<button type="submit" mat-raised-button color="primary" [disabled]="form.invalid || !form.dirty">Modifier</button>
 			<!--			<button mat-raised-button color="primary" (click)="modifier()" [disabled]="!modifForm.dirty || !modifForm.valid">Modifier</button>-->
 <!--			<button mat-raised-button color="warn" (click)="annuler()" [disabled]="!modifForm.dirty">Annuler</button>-->
 		</div>

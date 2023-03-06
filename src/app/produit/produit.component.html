@@ -8,24 +8,3 @@
 	<a routerLink="/produit/{{produit.id_biere}}"><button mat-raised-button color="primary" (click)="onModifier(produit.id_biere)">Modifier</button></a>
 	<button mat-raised-button color="warn" (click)="onEffacer(produit.id_biere)">Effacer</button>
 </div>
-
-
-<!--	<p><a routerLink="/modifie/{{produit.id_biere}}">Nom : {{produit.nom}}</a></p>-->
-
-<!--<ng-template #editable>-->
-<!--	&lt;!&ndash;<article  class="unProduit" >-->
-<!--		<p>Nom : <input type="text" [(ngModel)]="produit.nom"></p>-->
-<!--		<p>Fabricant : <input type="text"  [(ngModel)]="produit.brasserie"></p>-->
-<!--	</article>&ndash;&gt;-->
-<!--	<form [formGroup]="modifForm">-->
-<!--		<p>Nom : <input formControlName="nom"></p>-->
-<!--		<p>Brasserie : <input formControlName="brasserie"></p>-->
-<!--		<p>Description : <textarea formControlName="description"></textarea></p>-->
-<!--		<button (click)="modifier()" [disabled]="!modifForm.dirty || !modifForm.valid">Modifier</button>-->
-<!--		<button><a routerLink="/produit/{{produit.id_biere}}">Modifier</a></button>-->
-<!--		<button (click)="annuler()" [disabled]="!modifForm.dirty">Annuler</button>-->
-<!--	</form>-->
-
-<!--</ng-template>-->
-
-<!--<p *ngIf="estConnecte">Est éditable ? <input type="checkbox" (change)="changeEditable()" [(ngModel)]="peutEditer"></p>-->

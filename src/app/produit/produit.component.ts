@@ -30,29 +30,6 @@ export class ProduitComponent implements OnInit {
 	}
 
 
-	// annuler() {
-	//
-	// 	this.modifForm.controls["nom"].setValue(this.produit.nom);
-	// 	this.modifForm.controls["brasserie"].setValue(this.produit.brasserie);
-	// 	this.modifForm.controls["description"].setValue(this.produit.description);
-	// }
-
-
-
-	// modifier() {
-	// 	let unProduit: IBiere = this.modifForm.value;
-	// 	console.log(unProduit);
-	// 	this.bieroServ.modifierBiere(this.produit.id_biere, unProduit).subscribe((retour) => {
-	// 		console.log(retour);
-	// 		this.peutEditer = false;
-	// 		this.produit.nom = unProduit.nom;
-	// 		this.produit.brasserie = unProduit.brasserie;
-	// 		this.produit.description = unProduit.description;
-	// 	});
-	//
-	// }
-
-
 	onModifier(id_biere: number):void {
 		this.modifier.next(id_biere);
 	}
