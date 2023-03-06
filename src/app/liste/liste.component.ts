@@ -56,4 +56,8 @@ export class ListeComponent implements OnInit {
 			this.produits = listeBiere.data;
 		});
 	}
+
+	onAjoute() {
+
+	}
 }

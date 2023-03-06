@@ -6,12 +6,11 @@ import {IBiere} from '../ibiere';
 import {FormControl, FormGroup, Validators} from '@angular/forms'
 
 @Component({
-	selector: 'app-detail',
-	templateUrl: './detail.component.html',
-	styleUrls: ['./detail.component.scss']
+  selector: 'app-ajouter',
+  templateUrl: './ajouter.component.html',
+  styleUrls: ['./ajouter.component.scss']
 })
-export class DetailComponent implements OnInit {
-
+export class AjouterComponent implements OnInit {
 	public biere: IBiere;
 	public form: FormGroup;
 
@@ -27,7 +26,7 @@ export class DetailComponent implements OnInit {
 		this.route.params.subscribe((params) => {
 			this.bieroServ.getUneBiere(params['id']).subscribe((biere: any) => {
 				this.biere = biere['data'];
-				this.populateForm(this.biere);
+				// this.populateForm(this.biere);
 			})
 		})
 	}
@@ -50,21 +49,14 @@ export class DetailComponent implements OnInit {
 		});
 	}
 
-	public populateForm(biere: IBiere): void {
-		if (biere) {
-			this.form.get('nom')?.setValue(biere.nom);
-			this.form.get('brasserie')?.setValue(biere.brasserie);
-			this.form.get('description')?.setValue(biere.description);
-		}
-	}
-
-	modifier() {
-		let uneBiere: IBiere = this.form.value;
-		this.bieroServ.modifierBiere(this.biere.id_biere, uneBiere).subscribe((retour) => {
+	ajouter() {
+		let nouvelleBiere: IBiere = this.form.value;
+		console.log(nouvelleBiere)
+		this.bieroServ.ajouterBiere(nouvelleBiere).subscribe((retour) => {
 			console.log(retour);
-			this.biere.nom = uneBiere.nom;
-			this.biere.brasserie = uneBiere.brasserie;
-			this.biere.description = uneBiere.description;
+			this.biere.nom = nouvelleBiere.nom;
+			this.biere.brasserie = nouvelleBiere.brasserie;
+			this.biere.description = nouvelleBiere.description;
 		})
 		this.router.navigate(['/list']);
 	}

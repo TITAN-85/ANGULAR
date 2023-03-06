@@ -9,6 +9,9 @@
 		border-radius: 6px;
 		padding: 20px 40px;
 	}
+	.title {
+		margin-bottom: 6px;
+	}
 
 	.form-btn {
 		display: flex;
@@ -34,9 +37,15 @@
 
 	.form-inputs input{
 		&.ng-invalid {
-			border: 5px solid red;
+			border: 3px solid red;
 		}
 	}
+
+	//.form-inputs input{
+	//	&.ng-invalid.ng-touched {
+	//		border: 5px solid red;
+	//	}
+	//}
 
 	.exJson {
 		width: 300px;

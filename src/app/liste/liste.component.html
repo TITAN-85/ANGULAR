@@ -1,5 +1,6 @@
 
 <h1 class="title">Mes produits</h1>
+<a class="ajouter-btn" routerLink="/ajouter"><button mat-raised-button color="accent" (click)="onAjoute()">Ajouter</button></a>
 <div class="liste">
 	<app-produit *ngFor="let unProduit of produits"
 				 [produit]="unProduit"

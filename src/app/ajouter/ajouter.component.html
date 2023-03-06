@@ -1,14 +1,9 @@
-<!--<article class="exJson">-->
-<!--<p>Detail</p>-->
-<!--<pre>{{biere | json}}-->
-<!--</pre>-->
-<!--</article>-->
 
-<h1>Modifier biere</h1>
+<h1 class="title">Ajouter biere</h1>
 
 <div class="form-change">
 	<h3>Form biere</h3>
-	<form [formGroup]="form" (ngSubmit)="modifier()">
+	<form [formGroup]="form" (ngSubmit)="ajouter()">
 		<div class="form-inputs">
 			<label for="formName">Nom:</label>
 			<input id="formName" formControlName="nom" placeholder="Nom de la biere">
@@ -21,8 +16,7 @@
 		</div>
 
 		<div class="form-btn">
-			<button type="submit" mat-raised-button color="primary" [disabled]="form.invalid || !form.dirty">Modifier</button>
+			<button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Ajouter</button>
 		</div>
 	</form>
 </div>
-

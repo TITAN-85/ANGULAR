@@ -16,8 +16,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
-
-
+import { AjouterComponent } from './ajouter/ajouter.component';
 
 
 @NgModule({
@@ -28,7 +27,8 @@ import {MatCardModule} from '@angular/material/card';
     DetailComponent,
     EnteteComponent,
     NonTrouveeComponent,
-    ListeComponent
+    ListeComponent,
+    AjouterComponent
   ],
   imports: [
     BrowserModule,

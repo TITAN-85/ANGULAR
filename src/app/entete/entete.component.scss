@@ -1,7 +1,7 @@
 :host{
 
 	header {
-		width: 1400px;
+		width: 1165px;
 		display: grid;
 		grid-template-columns: max-content auto;
 		margin-left: auto;
@@ -12,10 +12,32 @@
 		.left {
 			a { &.estActif {font-weight: bold;} }
 		}
+
+		@media screen and (max-width: 1250px){
+			width: 900px;
+		}
+		@media screen and (max-width: 1024px){
+			width: 700px;
+		}
+		@media screen and (max-width: 800px){
+			width: 600px;
+		}
+		@media screen and (max-width: 650px){
+			width: 500px;
+				.accueilBlock {
+					display: none !important;
+				}
+		}
+		@media screen and (max-width: 360px) {
+			width: 300px;
+			.accueilBlock {
+				display: none !important;
+			}
+		}
 	}
 
 	//@media screen and (max-width: 1920px){
-	//	width: 1400px;
+	//	width: 1165px;
 	//	margin-right: auto;
 	//	margin-right: auto;
 	//}
