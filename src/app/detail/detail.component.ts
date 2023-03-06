@@ -57,27 +57,14 @@ export class DetailComponent implements OnInit {
 		}
 	}
 
-	// modifier() {
-		// let unProduit: IBiere = this.modifForm.value;
-		// console.log(unProduit);
-		// this.bieroServ.modifierBiere(this.produit.id_biere, unProduit).subscribe((retour) => {
-		// 	console.log(retour);
-		// 	this.peutEditer = false;
-		// 	this.produit.nom = unProduit.nom;
-		// 	this.produit.brasserie = unProduit.brasserie;
-		// 	this.produit.description = unProduit.description;
-		// });
-	// }
-
-	// annuler() {
-	// 	console.log(this.modifForm);
-	// 	this.modifForm.controls["nom"].setValue(this.produit.nom);
-	// 	this.modifForm.controls["brasserie"].setValue(this.produit.brasserie);
-	// 	this.modifForm.controls["description"].setValue(this.produit.description);
-	// }
 	modifier() {
-		console.log('Form Submited: ', this.form)
-		const formData = {...this.form.value}
-		console.log(formData)
+
+		let uneBiere: IBiere = this.form.value;
+		this.bieroServ.modifierBiere(this.biere.id_biere, uneBiere).subscribe((retour) => {
+			console.log(retour);
+			this.biere.nom = uneBiere.nom;
+			this.biere.brasserie = uneBiere.brasserie;
+			this.biere.description = uneBiere.description;
+		})
 	}
 }
