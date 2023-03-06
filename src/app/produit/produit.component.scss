@@ -30,14 +30,26 @@
 		column-gap: 12px;
 	}
 
+	@media screen and (max-width: 1250px){
+		width: 900px;
+		.date-modification {
+			display: none;
+		}
+	}
 	@media screen and (max-width: 1024px){
 		width: 700px;
+		.date-ajout {
+			display: none;
+		}
 	}
-	@media screen and (max-width: 768px) {
-		width: 550px;
+	@media screen and (max-width: 800px){
+		width: 600px;
+		.brasserie {
+			display: none;
+		}
 	}
-	@media screen and (max-width: 630px) {
-		width: 400px;
+	@media screen and (max-width: 650px){
+		width: 500px;
 	}
 	@media screen and (max-width: 360px) {
 		width: 300px;

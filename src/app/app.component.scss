@@ -9,12 +9,31 @@
 
 	.body {
 		height: 100%;
-		width: 1400px;
+		width: 1150px;
 		overflow: hidden;
 		display: grid;
 		grid-template-columns: auto;
 		grid-template-rows: min-content 100%;
 		margin-right: auto;
 		margin-left: auto;
+
+		@media screen and (max-width: 1250px){
+			width: 900px;
+			.date-modification {
+				display: none;
+			}
+		}
+		@media screen and (max-width: 1024px){
+			width: 700px;
+		}
+		@media screen and (max-width: 800px){
+			width: 600px;
+		}
+		@media screen and (max-width: 650px){
+			width: 500px;
+		}
+		@media screen and (max-width: 360px) {
+			width: 300px;
+		}
 	}
 }
